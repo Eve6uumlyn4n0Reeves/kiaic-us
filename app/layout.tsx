@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 
-import { Inter, Geist_Mono } from "next/font/google"
+import { Inter, JetBrains_Mono } from "next/font/google"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -14,9 +14,9 @@ const inter = Inter({
   display: "swap",
 })
 
-const geistMono = Geist_Mono({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-geist-mono",
+  variable: "--font-jetbrains-mono",
   display: "swap",
 })
 
@@ -53,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${geistMono.variable} antialiased`}>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>
       <body className="min-h-screen bg-background text-foreground font-sans">
         <ThemeProvider>
           <div className="flex flex-col min-h-screen">
