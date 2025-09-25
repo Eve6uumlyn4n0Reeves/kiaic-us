@@ -1,0 +1,307 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* KIAIC Academic Excellence Color System - Inspired by top AI companies */
+  /* Primary: Deep Academic Navy #0f172a - Authority and Trust */
+  --kiaic-navy: #0f172a;
+  /* Secondary: Professional Blue #1e40af - Innovation and Excellence */
+  --kiaic-blue: #1e40af;
+  /* Accent: Refined Teal #0891b2 - Technology and Growth */
+  --kiaic-teal: #0891b2;
+  /* Supporting: Neutral Gray #64748b - Professional Balance */
+  --kiaic-gray: #64748b;
+  /* Background: Pure White #ffffff - Academic Clarity */
+  --kiaic-white: #ffffff;
+
+  /* Light mode - Clean and professional */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.09 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.09 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.09 0 0);
+  --primary: oklch(0.25 0.08 264); /* Deep navy for authority */
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.09 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: oklch(0.47 0.13 264);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.92 0 0);
+  --input: oklch(0.97 0 0);
+  --ring: oklch(0.25 0.08 264);
+  --chart-1: oklch(0.25 0.08 264);
+  --chart-2: oklch(0.47 0.13 264);
+  --chart-3: oklch(0.6 0.118 184.704);
+  --chart-4: oklch(0.398 0.07 227.392);
+  --chart-5: oklch(0.828 0.189 84.429);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.09 0 0);
+  --sidebar-primary: oklch(0.25 0.08 264);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.09 0 0);
+  --sidebar-border: oklch(0.92 0 0);
+  --sidebar-ring: oklch(0.25 0.08 264);
+}
+
+.dark {
+  /* Dark Mode - Premium academic sophistication */
+  --background: oklch(0.09 0 0); /* Deep academic black */
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.12 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.09 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.09 0 0);
+  --secondary: oklch(0.18 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.18 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+  --accent: oklch(0.47 0.13 264);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.18 0 0);
+  --input: oklch(0.18 0 0);
+  --ring: oklch(0.47 0.13 264);
+  --chart-1: oklch(0.47 0.13 264);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.12 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.47 0.13 264);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.18 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.18 0 0);
+  --sidebar-ring: oklch(0.47 0.13 264);
+}
+
+@theme inline {
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+
+  /* Color mappings */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    line-height: 1.6;
+  }
+
+  /* Enhanced typography hierarchy for academic authority */
+  h1 {
+    @apply text-balance font-bold tracking-tight;
+    line-height: 1.1;
+  }
+  h2 {
+    @apply text-balance font-bold tracking-tight;
+    line-height: 1.2;
+  }
+  h3 {
+    @apply text-balance font-semibold tracking-tight;
+    line-height: 1.3;
+  }
+  h4,
+  h5,
+  h6 {
+    @apply text-balance font-semibold;
+    line-height: 1.4;
+  }
+  p {
+    @apply text-pretty leading-relaxed;
+    max-width: 65ch;
+  }
+
+  /* Professional link styling */
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+/* Minimal grid pattern for subtle technical feel */
+@keyframes grid-fade {
+  0%,
+  100% {
+    opacity: 0.02;
+  }
+  50% {
+    opacity: 0.05;
+  }
+}
+
+.academic-grid {
+  background-image: linear-gradient(var(--border) 0.5px, transparent 0.5px),
+    linear-gradient(90deg, var(--border) 0.5px, transparent 0.5px);
+  background-size: 60px 60px;
+  animation: grid-fade 8s ease-in-out infinite;
+}
+
+/* Subtle dot pattern for depth */
+.academic-dots {
+  background-image: radial-gradient(circle at 1px 1px, var(--muted-foreground) 0.5px, transparent 0.5px);
+  background-size: 40px 40px;
+  opacity: 0.03;
+}
+
+/* Professional card styling with subtle borders */
+.academic-card {
+  @apply bg-card border border-border rounded-lg;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.academic-card:hover {
+  @apply border-accent/20 shadow-lg;
+  transform: translateY(-2px);
+}
+
+/* Clean button styling */
+.btn-primary {
+  @apply bg-primary text-primary-foreground hover:bg-primary/90;
+  @apply font-medium px-6 py-3 rounded-lg;
+  @apply transition-all duration-200;
+  @apply shadow-sm hover:shadow-md;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  @apply font-medium px-6 py-3 rounded-lg border border-border;
+  @apply transition-all duration-200;
+}
+
+/* Refined scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Academic section spacing */
+.section-padding {
+  @apply py-24 lg:py-32;
+}
+
+.container-padding {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+/* Text alignment utilities for better hierarchy */
+.text-left-aligned {
+  text-align: left;
+  max-width: none;
+}
+
+.text-center-balanced {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive typography scale */
+.text-display {
+  @apply text-4xl sm:text-5xl lg:text-6xl xl:text-7xl;
+}
+
+.text-headline {
+  @apply text-2xl sm:text-3xl lg:text-4xl;
+}
+
+.text-title {
+  @apply text-xl sm:text-2xl lg:text-3xl;
+}
+
+.text-body-large {
+  @apply text-lg sm:text-xl;
+}
+
+/* Professional spacing system */
+.space-section {
+  @apply space-y-16 lg:space-y-24;
+}
+
+.space-content {
+  @apply space-y-8 lg:space-y-12;
+}
+
+.space-elements {
+  @apply space-y-4 lg:space-y-6;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus states for accessibility */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-accent;
+}
